@@ -1,2 +1,2 @@
 # project_djn
-my first project using html css and django-ython
+my first project using html css and django-python
