@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    {% for x in posts %}
+      <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="#">{{ x.author }}</a>
+            <small class="text-muted">{{ x.date_posted | date:"F d, Y"}}</small>
+          </div>
+          <h2><a class="article-title" href="#">{{ x.title }}</a></h2>
+          <p class="article-content">{{ x.concept }}</p>
+        </div>
+      </article>
+    {% endfor %}
+    <form method="post" action="{% url 'logout' %}">
+      {% csrf_token %}
+      <button type="submit">logout</button>
+  </form>
+{% endblock content %}
